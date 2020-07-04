@@ -6,10 +6,9 @@
 `cd itensor`
 3. 安装blas和lapack包用于itensor的编译
 `sudo apt-get install libblas-dev liblapack-dev`
-4. 创建并修改make的配置文件
+4. 创建make的配置文件
 `cp options.mk.sample options.mk`
-`gedit options.mk`
-然后修改此文件：
+然后修改此文件`vim options.mk`：
 根据文件中的提示，分别更改三个部分
     * 第一步：选择编译器，使用GNU GCC compiler，把其他的注释掉
     * 第二步：选择BLAS/LAPACK选项，使用GNU/LINUX systems，其他注释

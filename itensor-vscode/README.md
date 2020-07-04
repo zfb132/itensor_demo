@@ -2,17 +2,17 @@
 ------
 ## 1. 安装vscode和wsl子系统
 * 访问[vscode官网](https://code.visualstudio.com/)下载最新稳定的windows版本并安装
-* 为vscode安装扩展`C/C++`
+* 为vscode安装扩展`C/C++`和`Remote-SSH`
 * 在win10专业版中找到`启用或关闭windows功能`，选择`适用于Linux的Windows子系统`，根据提示安装后重启系统
 * 在应用商店里面搜索框输入`linux`，选择匹配的第一个选项点击<img src="img/itensor-vscode-01.png" />
 * 在新的页面选择Ubuntu，点击并安装，等待安装完成即可
 * 在开始菜单找到刚才安装好的Ubuntu应用，点击进入会自动配置，等待配置完成即可输入用户名和密码来使用Ubuntu系统
 * 在wsl系统下使用`sudo apt-get update && sudo apt-get install make`来安装make工具
 ## 2. 安装itensor
-具体方法见`itensor-install.pdf`
+具体方法见[itensor-install/README.md](../itensor-install/README.md)
 ## 3. 使用vscode编写代码
 ### 3.1 配置vscode
-打开vscode，点击左下角的`><`标志<img src="img/itensor-vscode-02.png" />
+打开vscode，点击左下角的`><`标志  <img src="img/itensor-vscode-02.png" />  
 选择`Remote-WSL: New Window`，然后在新窗口中进行操作，新窗口的左下角标志为下图<img src="img/itensor-vscode-03.png" />
 原窗口可以根据自己需要决定是否关闭；至于`Select Python Interpreter`可以点击后选择第一个，或者不管它  
 ### 3.2 windows的文件与wsl系统的文件互相访问
@@ -131,6 +131,7 @@ wsl系统读取windows的文件：
 <img src="img/itensor-vscode-12.png" />
 则点击图中的`终端`即可切换到程序输出结果界面
 <img src="img/itensor-vscode-13.png" />
+
 **第二种方法**：
 点击菜单栏的`终端-->新建终端`，然后在弹出的窗口里面即可使用Ubuntu命令，编译使用`make`，运行使用`./myappname`等等
 <img src="img/itensor-vscode-14.png" />
@@ -139,6 +140,7 @@ wsl系统读取windows的文件：
 <img src="img/itensor-vscode-15.png" />
 2. 菜单栏选择`调试-->启动调试`即可调试此代码
 <img src="img/itensor-vscode-16.png" />
+
 上面中间位置的工具栏可以控制进行`继续运行直到下一个断点`、`单步跳过`、`单步调试`、`单步跳出`、`重启程序`、`结束调试`  
 左侧可以查看变量的值，鼠标在编辑区的变量上悬停也可以看到变量的值
 ### 4. 快速使用
