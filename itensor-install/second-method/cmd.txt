@@ -1,0 +1,2 @@
+g++ -m64 -std=c++17 -fPIC -c -I. -I/home/zfb/itensor -o test.o test.cpp
+g++ -m64 -std=c++17 -fPIC -I. -I/home/zfb/itensor test.o -o test -L/home/zfb/itensor/lib -litensor -lpthread -L/usr/lib -lblas -llapack
