@@ -22,10 +22,10 @@ int main()
     // 转换AutoMPO类型到MPO
     auto T = toMPO(ampo);
     // PrintData(T(10));
-    auto y = inds(T(10));
-    print(y);
-    print(size(y));
-    print(dim(y(2)));
+    // auto y = inds(T(10));
+    // print(y);
+    // print(size(y));
+    // print(dim(y(2)));
 
     // 创建函数extractReal，参数为Dense<Real>类型
     auto extractReal = [](Dense<Real> const& d)
@@ -37,13 +37,12 @@ int main()
     // 循环输出每个格点;N要修改
     std::string name_template = "output_data_";
     std::string name_suffix = ".txt";
-    for(int t = 1;t <= N;t++)
+    for(int t = 1;t <= length(T);t++)
     {
         auto v = applyFunc(extractReal, T(t).store());
-        auto iii = size(v);
         std::ofstream outfile;
         outfile.open(name_template+to_string(t)+name_suffix);
-        for(int i = 1;i <= iii;i++) 
+        for(int i = 0;i < size(v);i++) 
         {
             outfile << v[i] << std::endl;
         }
@@ -51,21 +50,20 @@ int main()
     }
     // ------------多文件结束---------
     
-    
     // ---------ITensor数组输出到：单文件---------------
     // 循环输出每个格点;N要修改
     std::string name = "output_data.txt";
     std::ofstream outfile;
     outfile.open(name);
-    for(int t = 1;t <= N;t++)
+    for(int t = 1;t <= length(T);t++)
     {
         auto v = applyFunc(extractReal, T(t).store());
-        auto iii = size(v);
-        for(int i = 1;i <= iii;i++) 
+        for(int i = 0;i < size(v);i++) 
         {
             // 数据之间以单空格分割
             outfile << v[i] << " ";
         }
+        // 不同ITensor之间以换行分割
         outfile << std::endl;
     }
     outfile.close();
