@@ -3,7 +3,7 @@
 包括以下步骤：  
 * 在Linux系统下载[itensor](https://github.com/ITensor/ITensor/releases)最新发布版本的源码压缩包(zip)
 * 安装itensor的依赖库
-* 修改Makefile文件
+* 修改`Makefile`文件
 * 编译安装itensor
 * 测试itensor库的使用
 
