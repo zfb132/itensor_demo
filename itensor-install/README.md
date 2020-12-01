@@ -1,21 +1,45 @@
 ## 1. 安装ITensor步骤
 1. 下载ITensor源码  
-`git clone https://github.com/ITensor/ITensor itensor`
-注意：可以把此itensor文件夹移动到任何你想安装到的位置
-2. 进入该目录
+`git clone https://github.com/ITensor/ITensor itensor`  
+注意：可以把此itensor文件夹移动到任何你想安装到的位置。另外，也可以下载[release版本](https://github.com/ITensor/ITensor/releases)的代码压缩包并解压
+2. 进入该目录  
 `cd itensor`
-3. 安装blas和lapack包用于itensor的编译
+3. 安装blas和lapack包用于itensor的编译  
 `sudo apt-get install libblas-dev liblapack-dev`
-4. 创建make的配置文件
-`cp options.mk.sample options.mk`
-然后修改此文件`vim options.mk`：
-根据文件中的提示，分别更改三个部分
-    * 第一步：选择编译器，使用GNU GCC compiler，把其他的注释掉
-    * 第二步：选择BLAS/LAPACK选项，使用GNU/LINUX systems，其他注释
-    * 第三步：选择编译选项，默认即可，不需要修改
-5. 编译源代码
-`make`
-6. 此时即可正常使用itensor
+4. 创建并修改make的配置文件  
+`cp options.mk.sample options.mk`  
+`gedit options.mk`  
+然后修改此文件：  
+根据文件中的提示，分别更改三个部分  
+    * 第一步：选择编译器，使用`GNU GCC compiler`，把其他的注释掉
+    * 第二步：选择`BLAS/LAPACK`相关选项，使用`GNU/LINUX systems`，其他注释
+    * 第三步：选择编译选项，保持默认即可，不需要修改
+5. 编译源代码  
+`make`  
+6. 此时即可正常使用itensor  
+
+修改后的`options.mk`文件关键部分示例：  
+```txt
+#########
+## [1]
+##
+## Set which compiler to use by defining CCCOM:
+## GNU GCC compiler
+CCCOM=g++ -m64 -std=c++17 -fconcepts -fPIC
+
+#########
+## [2]
+##
+## BLAS/LAPACK Related Options
+##
+
+##
+## Example using a C interface to LAPACK on GNU/LINUX systems
+## (Path to lib/ folder may differ on your system)
+##
+PLATFORM=lapack
+BLAS_LAPACK_LIBFLAGS=-lpthread -L/usr/lib -lblas -llapack
+```
 
 
 ## 2. 如何创建和编译itensor项目
