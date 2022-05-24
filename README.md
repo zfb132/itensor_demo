@@ -7,7 +7,7 @@
 * 编译安装itensor
 * 测试itensor库的使用
 
-详细介绍见[itensor-install](https://github.com/zfb132/itensor/tree/master/itensor-install)
+详细介绍见[itensor-install](https://github.com/zfb132/itensor_demo/tree/master/itensor-install)
 ## 2. 在Windows系统使用VSCode编译及调试代码
 包括以下步骤：  
 * 启用`适用于Windows的Linux子系统`并安装ubuntu软件
@@ -15,4 +15,4 @@
 * 配置VSCode与itensor的C++开发环境
 * 测试代码
 
-详细介绍见[itensor-vscode](https://github.com/zfb132/itensor/tree/master/itensor-vscode)
+详细介绍见[itensor-vscode](https://github.com/zfb132/itensor_demo/tree/master/itensor-vscode)
